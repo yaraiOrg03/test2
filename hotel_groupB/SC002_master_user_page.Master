@@ -1,0 +1,66 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SC002_master_user_page.master.cs" Inherits="hotel_groupB.SC002_master_user_page" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+   
+        <!-- ここはヘッダ -->
+     <header style="background-color:lightcyan; color:white; margin-bottom:20px;">
+             <div class="container">
+            <div class="row">  
+         <div class="col-4" ></div>
+                <div class="col-4"></div>
+                <div class="col-4">  &nbsp;  <asp:HyperLink ID="return_user_top" runat="server"　Textalign="right" NavigateUrl="~/SC202_user_menu.aspx" ForeColor="#0000CC" ImageUrl="~/Top_Page.png" ImageWidth="350px" ImageHeight="50px"  >トップページに戻る</asp:HyperLink>
+      </div>
+                    </div>
+                 </div>
+         </header>
+        <!--ここから中身 -->
+     <form id="form1" runat="server">
+        <div class="container" align="center">
+           <div class="row">
+            <div class="col">
+            </div>
+            <div class="col-12">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+                   </div>
+            <div class="col">
+            </div>
+            </div>
+            </div>
+        <div>
+        </div>
+        <div>
+        </div>
+    <footer style="background-color:lightcyan; color:white; margin-top:20px;" align="right">
+        <!-- ここはフッター -->
+        
+                   <div class="container">
+            <div class="row">  
+         <div class="col-4" ></div>
+                <div class="col-4"></div>
+                    <div class="col-4">
+        
+
+        
+        <asp:Label ID="Label1" runat="server" Height="30px" ForeColor="Black" Width="212px">© Uyuni Group, Inc.</asp:Label>
+</div> 
+                </div>
+                       </div>
+    </footer>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+   </body>
+</html>
