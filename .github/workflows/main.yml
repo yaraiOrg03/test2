@@ -28,7 +28,8 @@ jobs:
       # solution ファイルの状態を復元する
       # 例えば、nuget で参照しているファイルを取得するなど
      - name: Restore the application
-       run: msbuild /t:Restore /p:Configuration=Release
+      # run: msbuild /t:Restore /p:Configuration=Release
+       run: nuget restore hotel_groupB.sln
 
       # Build 実行
      - name: Build the application
