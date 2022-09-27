@@ -5,14 +5,7 @@ on:
      inputs:  
       apllicationname:
        required: true
-       type: string,
-      repositoryname:
-       required: true
        type: string
-      patname:
-       required: true
-       type: string
-
 jobs:
   build:
     runs-on: windows-latest
