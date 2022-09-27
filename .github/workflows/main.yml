@@ -56,4 +56,4 @@ jobs:
        uses: actions/upload-artifact@v2
        with:
           name: 39
-          path: "${{github.workspace}}/hotel_groupB/bin/Debug/${{github.event.inputs.apllicationname}}"
+          path: "${{github.workspace}}/hotel_groupB/bin/${{github.event.inputs.apllicationname}}"
