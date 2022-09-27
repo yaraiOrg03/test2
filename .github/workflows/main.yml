@@ -44,13 +44,13 @@ jobs:
      #- name: Build
      #  run: dotnet build --no-restore
      - name: test   
-       run: cd ${{github.workspace}};ls
+       run: cd ${{github.workspace}}/hotel_groupB/bin;ls
    
      - name: Install AzureSignTool
        run: dotnet tool install --global AzureSignTool
      - name: Sign package
        run:
-              AzureSignTool sign -kvt "${{secrets.AzureKeyVaultTenantId}}" -kvu "${{ secrets.AzureKeyVaultUrl }}" -kvi "${{ secrets.AzureKeyVaultClientId }}" -kvs "${{ secrets.AzureKeyVaultClientSecret }}" -kvc ${{ secrets.AzureKeyVaultName }} -tr http://timestamp.digicert.com -v "${{github.workspace}}/hotel_groupB/bin/Debug/${{github.event.inputs.apllicationname}}"
+              AzureSignTool sign -kvt "${{secrets.AzureKeyVaultTenantId}}" -kvu "${{ secrets.AzureKeyVaultUrl }}" -kvi "${{ secrets.AzureKeyVaultClientId }}" -kvs "${{ secrets.AzureKeyVaultClientSecret }}" -kvc ${{ secrets.AzureKeyVaultName }} -tr http://timestamp.digicert.com -v "${{github.workspace}}/hotel_groupB/bin/${{github.event.inputs.apllicationname}}"
      
      - name: Archive production artifacts
        uses: actions/upload-artifact@v2
