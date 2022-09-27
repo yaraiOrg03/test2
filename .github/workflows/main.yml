@@ -43,7 +43,8 @@ jobs:
       # run: dotnet restore
      #- name: Build
      #  run: dotnet build --no-restore
-
+     - name: test   
+       run: cd ${{github.workspace}};ls
    
      - name: Install AzureSignTool
        run: dotnet tool install --global AzureSignTool
