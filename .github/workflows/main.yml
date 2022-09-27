@@ -17,15 +17,31 @@ jobs:
         repository: "yaraiOrg03/test2"
      - name: test   
        run: cd ${{github.workspace}};ls
-       
-     - name: Setup .NET
-       uses: warrenbuckley/setup-MSBuild@v1
-       with:
-        dotnet-version: 4.7.2
-     - name: Restore dependencies
-       run: dotnet restore
-     - name: Build
-       run: dotnet build --no-restore
+      
+     - name: Setup MSBuild.exe
+       uses: microsoft/setup-msbuild@v1
+
+      # nuget のセットアップをする
+     - name: Setup NuGet
+       uses: NuGet/setup-nuget@v1
+
+      # solution ファイルの状態を復元する
+      # 例えば、nuget で参照しているファイルを取得するなど
+     - name: Restore the application
+       run: msbuild /t:Restore /p:Configuration=Release
+
+      # Build 実行
+     - name: Build the application
+       run: msbuild /p:Configuration=Release
+      
+    # - name: Setup .NET
+     #  uses: warrenbuckley/setup-MSBuild@v1
+      # with:
+       # dotnet-version: 4.7.2
+     #- name: Restore dependencies
+      # run: dotnet restore
+     #- name: Build
+     #  run: dotnet build --no-restore
 
    
      - name: Install AzureSignTool
